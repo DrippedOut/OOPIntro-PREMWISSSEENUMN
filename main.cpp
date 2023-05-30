@@ -3,21 +3,64 @@ using namespace std;
 
 #include "student.h"
 
-int main(int argc, char* argv[]) {
-  student s1,s2;
-  student a[10];
- // s1.name="PUN";  // ERROR, it is in private
-    s1.set_name(); //make a default value to your name
-  //s1.set_age(20); 
-		s2.set_name("Joe");
-		
-    s1.print_name();
-    s2.print_name(); 
-   
+#define N 3
 
-    
+int main(int argc, char *argv[]) {
+  student a[N];
+  int i, age;
+  string n;
+
+  // 1.Ask names and age using cin for N people
+
+  for (i = 0; i < N; i++) {
+    cout << "What is your name?";
+    cin >> n;
+    a[i].set_name(n);
+    cout << "What is your age?";
+    cin >> age;
+    a[i].set_age(age);
   }
-  
-  
 
+  printf("--------------------- \n");
 
+  // 2.Print name and age of all N ppl
+
+  
+  for(i=0; i<N; i++){
+    cout << "Student " << i+1 << ":" << endl;
+    printf("\n");
+    // Print both name&age of the student
+    a[i].print_all();
+    printf("\n");
+  }
+
+  printf("--------------------- \n");
+  
+  // 3.Print name and age of the youngest person
+
+   int young = a[0].get_age(); //Age of Student 1
+  
+  student youngest = a[0];
+  
+  for(i=1; i<N; i++){
+    if(a[i].get_age()<young){
+      young = a[i].get_age();
+    }
+  }
+  // Print all info for the youngest person
+  
+  cout << "Youngest people: " << endl;
+  printf("\n");
+  
+  for(i=0; i<N; i++){
+    if(a[i].get_age()==young){
+      a[i].print_all();
+      printf("\n");
+    }
+  }
+
+  printf("--------------------- \n");
+
+  // 4.Change input from cin to argv
+  
+}
