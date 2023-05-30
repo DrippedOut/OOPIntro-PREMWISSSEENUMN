@@ -10,6 +10,25 @@ int main(int argc, char *argv[]) {
   int i, age;
   string n;
 
+  // 4.Change input from cin to argv
+
+  /* 
+  
+  ***UNCOMMENT TO ALLOW INPUT FROM ARGV***
+  
+   int argIndex = 1;
+
+  for (i = 0; i < N; i++) {
+    n = argv[argIndex++];
+    a[i].set_name(n);
+    age = atoi(argv[argIndex++]);
+    a[i].set_age(age);
+  }
+  
+  printf("---------------------\n");
+
+  */
+
   // 1.Ask names and age using cin for N people
 
   for (i = 0; i < N; i++) {
@@ -61,6 +80,5 @@ int main(int argc, char *argv[]) {
 
   printf("--------------------- \n");
 
-  // 4.Change input from cin to argv
-  
+  return 0;
 }
